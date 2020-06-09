@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cover.css">
+</head>
+
+<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <img class="masthead-brand" src="img/misc/NASAlogo.png" alt="Nasa Logo"
+                    style="height: 2rem; width: auto; cursor: context-menu;">
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="https://mail.google.com/mail/"><i class="fa fa-envelope"></i> Gmail</a>
+                    <a class="nav-link" href="https://www.google.ca/imghp?hl=en&tab=ri&authuser=0&ogbl"><i
+                            class="fa fa-image"></i> Images</a>
+                    <a id="goToApps" class="nav-link" href="#"><i class="fa fa-th"></i> Apps</a>
+                    <a id="goToDefault" class="nav-link" href="#"><i class="fa fa-home"></i> Default</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 class="cover-heading" style="font-size: 540%; cursor: context-menu;">Google</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form method="GET" action="https://www.google.com/search">
+                        <div class="form-group">
+                            <input type="text" name="q" class="form-control" id="googlesearch"
+                                aria-describedby="googlesearch" placeholder="Search Google...">
+                            <input type="submit" style="visibility: hidden" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div id="fav1" class="col-3 mb-2" style='text-decoration: none;' data-whatever="1">
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav2" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav3" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav4" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav5" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav6" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav7" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+                <div id="fav8" class="col-3 mb-2" style='text-decoration: none;'>
+                    <a href='#' style='text-decoration: none;'>
+                        <div class='favorite'>
+                            <i style='border-radius: 50%; width: 50px; height: 50px;'
+                                class="fa fa-plus-circle fa-2x"></i>
+                            <p style='word-wrap: break-word;'>Missing</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mastfoot mt-auto mb-2">
+            <div class="inner text-center">
+                <a style="text-decoration: none;" href="https://apod.nasa.gov/apod/astropix.html">
+                    <h5 id='title' class="text-center" data-toggle="tooltip"
+                        title="Click here for more information about current image and past images.">Loading</h5>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/psl/dist/psl.min.js"></script>
+
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+<script src="src/goto.js"></script>
+<script src="src/setimage.js"></script>
+<script src="src/setfavorites.js"></script>
+<script src="src/tooltip.js"></script>
+
+</html>

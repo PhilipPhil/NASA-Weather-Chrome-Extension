@@ -6,6 +6,9 @@ fetch(imgUrl)
 function addBackGround(data) {
     imgUrl = data['hdurl']
     title = data['title']
+    date = data['date']
+    date = new Date(date);
+    document.getElementById('date').innerText = date.toDateString()
     document.getElementById('title').innerText = title
     document.body.style.backgroundImage = "url('" + imgUrl + "')"
 }

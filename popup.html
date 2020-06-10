@@ -12,8 +12,12 @@
 
 <body>
     <div class="card" style="width: 24rem;">
-        <div class="container" style="padding: 0px; position: relative; text-align: center; color: #fff; background-color: black;">
+        <div class="container"
+            style="padding: 0px; position: relative; text-align: center; color: #fff; background-color: black;">
+            
             <img id="geoImage" class="card-img-top" src="img/misc/earthspinning.gif" alt="Location">
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+                type="text/javascript"></script>
             <div id="geoLocation" style="position: absolute; bottom: 8px; left: 16px;">Loading</div>
         </div>
         <div class="card-body">

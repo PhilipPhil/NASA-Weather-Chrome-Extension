@@ -14,15 +14,22 @@ function getDateString(unixTime) {
 function showMap(position) {
     lat = position.coords.latitude
     lon = position.coords.longitude
-    
-    apikey = 'iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
-    document.getElementById('geoLocation').innerText = "(Lat " + lat.toFixed(6) +", Lon " + lon.toFixed(6) + ")"
-    document.getElementById('geoImage').src = 'https://api.nasa.gov/planetary/earth/imagery?lon=' + lon + '&lat=' + lat + '&dim=0.1&api_key=' + apikey
-    
+    setImage(lat, lon)
+    setData(lat, lon)  
+}
+
+function setData() {
     apikey = '3e7cd6048bd8114abedeee14fcc11575'
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + apikey)
         .then(response => response.json())
         .then(data => getData(data));
+}
+
+function setImage() {
+    apikey = 'iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
+    document.getElementById('geoLocation').innerText = "Lat " + lat.toFixed(6) +", Lon " + lon.toFixed(6)
+    document.getElementById('geoImage').src = 'https://api.nasa.gov/planetary/earth/imagery?lon=' + lon + '&lat=' + lat + '&dim=0.1&api_key=' + apikey
+    
 }
 
 function getData(data) {

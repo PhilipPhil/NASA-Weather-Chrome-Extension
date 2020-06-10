@@ -24,3 +24,11 @@ Api’s:
 - Logo: clearbit
 - Background Image: NASA APOD
 - Geopin Location Image: NASA Earth Api
+
+## Sample UI
+
+### New tab with popup open
+![Image1](img/AppExample/sample1.JPG)
+
+### New tab different date
+![Image2](img/AppExample/sample2.JPG)

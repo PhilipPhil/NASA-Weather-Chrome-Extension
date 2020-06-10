@@ -28,7 +28,7 @@ Api’s:
 ## Sample UI
 
 ### New tab with popup open
-![Image1](img/AppExample/sample1.JPG)
+![Image1](img/uisample/sample1.JPG)
 
 ### New tab different date
-![Image2](img/AppExample/sample2.JPG)
+![Image2](img/uisample/sample2.JPG)

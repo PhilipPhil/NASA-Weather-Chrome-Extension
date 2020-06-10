@@ -7,9 +7,9 @@ Features:
 - Shortcuts to Gmail, Google Images, and the Apps store.
 - Link that takes you to the default new tab page.
 - Google search bar.
-- Fully functional on any screen size. 
+- Fully Responsive Design. 
 - Popup features that displayes current city, temperature, weather, and geo-location image.
-- Weather update when click popup icon.
+- Weather update of current location popup icon is clicked.
 
 Install:
 - npm install bootstrap

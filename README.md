@@ -35,5 +35,6 @@ Api’s:
 ### New tab with popup open
 ![Image1](img/uisample/sample1.JPG)
 
-### New tab different date
+### More Examples
+![Image2](img/uisample/sample3.JPG)
 ![Image2](img/uisample/sample2.JPG)

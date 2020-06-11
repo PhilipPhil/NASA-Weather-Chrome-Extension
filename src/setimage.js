@@ -13,9 +13,12 @@ function setImage(dt) {
 
 function addBackGround(data, dt) {
     if (data["media_type"] == "image") {
-        document.getElementById('title').innerText = data['title']
-        document.body.style.backgroundImage = "url('" + data['hdurl'] + "')"
-        localStorage.setItem("APOD", "url('" + data['hdurl'] + "')");
+        title = data['title']
+        imgURL = "url('" + data['hdurl'] + "')"
+        document.getElementById('title').innerText = title
+        document.body.style.backgroundImage = imgURL
+        localStorage.setItem("title", title);
+        localStorage.setItem("APOD", imgURL);
     } else {
         dt.setDate(dt.getDate() - 1);
         setImage(dt)
@@ -28,7 +31,7 @@ dt = new Date()
 document.getElementById('date').innerText = dt.toDateString()
 currentDMY = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate()
 if (currentDMY == localStorage.getItem('lastDMY')) {
-    document.getElementById('title').innerText = localStorage.getItem('lastDMY')
+    document.getElementById('title').innerText = localStorage.getItem('title')
     document.body.style.backgroundImage = localStorage.getItem('APOD')
 } else {
     setImage(dt)

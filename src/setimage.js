@@ -1,19 +1,28 @@
-var imgUrl = 'https://api.nasa.gov/planetary/apod?api_key=iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
+function setImage(dt) {
+    try{
+        ymd = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate()
+        fetch(APIUrl + ymd + key)
+            .then(response => response.json())
+            .then(data => addBackGround(data, dt));
+    } catch {
+        dt.setDate(dt.getDate() - 1);
+        setImage(dt)
+    }
 
-fetch(imgUrl)
-    .then(response => response.json())
-    .then(data => addBackGround(data));
+}
 
-function addBackGround(data) {
-    imgUrl = data['hdurl']
-    title = data['title']
-    date = new Date();
-    document.getElementById('date').innerText = date.toDateString()
+function addBackGround(data, dt) {
     if (data["media_type"] == "image") {
-        document.getElementById('title').innerText = title
-        document.body.style.backgroundImage = "url('" + imgUrl + "')"
+        document.getElementById('title').innerText = data['title']
+        document.body.style.backgroundImage = "url('" + data['hdurl'] + "')"
     } else {
-        document.getElementById('imagelink').href = "https://apod.nasa.gov/apod/ap200606.html"
-        document.body.style.backgroundImage = "url('img//misc/CometPanSTARRsandtheGalaxies.jpg')"
+        dt.setDate(dt.getDate() - 1);
+        setImage(dt)
     }
 }
+
+var APIUrl = 'https://api.nasa.gov/planetary/apod?date='
+var key = '&api_key=iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
+dt = new Date()
+document.getElementById('date').innerText = dt.toDateString()
+setImage(dt)

@@ -34,16 +34,19 @@ function setData(lat, lon) {
 }
 
 function getData(data) {
+    description = data["weather"][0]['description']
+    description = description.charAt(0).toUpperCase() + description.slice(1)
+    city = data["name"]
     cel = Math.round(data["main"]["temp"] - 273.15) + "°C"
     far = Math.round((data["main"]["temp"] - 273.15) * 9 / 5 + 32) + "°F"
     sunrise = "Sunrise " + getDateString(data["sys"]["sunrise"] * 1000);
     sunset = "Sunset " + getDateString(data["sys"]["sunset"] * 1000);
-    city = data["name"]
+    document.getElementById('city').innerText = city;
+    document.getElementById('description').innerText = description
     document.getElementById('cel').innerText = cel
     document.getElementById('far').innerText = far
     document.getElementById('sunrise').innerText = sunrise
     document.getElementById('sunset').innerText = sunset
-    document.getElementById('city').innerText = city;
 }
 
 navigator.geolocation.getCurrentPosition(showMap);

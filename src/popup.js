@@ -27,15 +27,14 @@ function setData(lat, lon) {
 
 function setImage(lat, lon) {
     document.getElementById('geoLocation').innerText = "Lat " + lat.toFixed(6) + ", Lon " + lon.toFixed(6)
-    if (lat == localStorage.getItem('lat') && lat == localStorage.getItem('lat')) {
+    if (lat.toFixed(4) == localStorage.getItem('lat') && lat.toFixed(4) == localStorage.getItem('lat')) {
         document.getElementById('geoImage').src = localStorage.getItem("geoImage")
     } else {
         apikey = 'iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
         imgURL = 'https://api.nasa.gov/planetary/earth/imagery?lon=' + lon + '&lat=' + lat + '&dim=0.1&api_key=' + apikey
-        alert(imgURL)
         document.getElementById('geoImage').src = imgURL
-        localStorage.setItem("lat", lat)
-        localStorage.setItem("lon", lon)
+        localStorage.setItem("lat", lat.toFixed(4))
+        localStorage.setItem("lon", lon.toFixed(4))
         localStorage.setItem("geoImage", imgURL)
     }
 

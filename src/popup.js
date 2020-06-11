@@ -50,4 +50,3 @@ function getData(data) {
 }
 
 navigator.geolocation.getCurrentPosition(showMap);
-

@@ -1,8 +1,17 @@
 
-function setdatetime() {
+function setdate() {
     dt = new Date()
-    document.getElementById('date').innerText = dt.toDateString() + ' ' + dt.toLocaleTimeString()
+    document.getElementById('date').innerText = dt.toDateString()
 }
 
-setdatetime()
-setInterval(setdatetime, 1)
+function settime() {
+    dt = new Date()
+    document.getElementById('time').innerText =  dt.toLocaleTimeString()
+}
+
+
+settime()
+setdate()
+
+setInterval(settime, 1)
+setInterval(setdate, 1000)

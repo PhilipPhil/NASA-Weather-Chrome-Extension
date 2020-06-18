@@ -5,7 +5,7 @@ function setImage(dateDirection) {
             .then((response) => response.json())
             .then((data) => addBackGround(data, dateDirection));
     } catch {
-        if(positionDate >= new Date()){
+        if (positionDate >= new Date()) {
             positionDate.setDate(positionDate.getDate() - 1);
             setImage(-1);
         } else {
@@ -21,12 +21,6 @@ function addBackGround(data, dateDirection) {
         imgURL = "url('" + data["hdurl"] + "')";
         document.getElementById("title").innerText = title;
         document.body.style.backgroundImage = imgURL;
-        if(isInital){
-            localStorage.setItem("title", title);
-            localStorage.setItem("APOD", imgURL);
-            isInital = false
-        }
-
     } else {
         positionDate.setDate(positionDate.getDate() + dateDirection);
         setImage(dateDirection);
@@ -38,8 +32,6 @@ function initalImageLoad() {
     setImage(-1);
 }
 
-// localStorage.clear();
-
 const APIUrl = "https://api.nasa.gov/planetary/apod?date=";
 const key = '&api_key=iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
 
@@ -47,20 +39,7 @@ var positionDate = new Date();
 positionDate = new Date(positionDate.toUTCString());
 positionDate.setHours(positionDate.getHours() - 8); // set to pacific time when they update the api
 
-var isInital = true
-
-currentDMY = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate()
-
-if (currentDMY == localStorage.getItem('lastDMY')) {
-    document.getElementById('title').innerText = localStorage.getItem('title')
-    document.body.style.backgroundImage = localStorage.getItem('APOD')
-} else {
-    initalImageLoad()
-    localStorage.setItem('lastDMY',currentDMY)
-}
-
-
-initalImageLoad();
+initalImageLoad()
 
 document.getElementById("left").addEventListener("click", function (e) {
     document.getElementById("right").style.display = "block";

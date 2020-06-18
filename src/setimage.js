@@ -28,7 +28,6 @@ function addBackGround(data, dt) {
 var APIUrl = 'https://api.nasa.gov/planetary/apod?date='
 var key = '&api_key=iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5'
 dt = new Date()
-document.getElementById('date').innerText = dt.toDateString()
 currentDMY = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate()
 if (currentDMY == localStorage.getItem('lastDMY')) {
     document.getElementById('title').innerText = localStorage.getItem('title')

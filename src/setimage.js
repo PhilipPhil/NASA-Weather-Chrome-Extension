@@ -20,6 +20,16 @@ function addBackGround(data, dateDirection) {
     if (data["media_type"] == "image") {
         title = data["title"];
         imgURL = "url('" + data["hdurl"] + "')";
+
+        imgdate = data["date"]
+        
+        explanation = data["explanation"]
+
+        document.getElementById("modaltitle").innerText = title;
+        document.getElementById("modaldate").innerText = imgdate;
+        document.getElementById("modaldescription").innerText = explanation;
+        document.getElementById("modalimage").src = data["hdurl"]
+
         document.getElementById("title").innerText = title;
         document.body.style.backgroundImage = imgURL;
     } else {
@@ -61,3 +71,8 @@ document.getElementById("right").addEventListener("click", function (e) {
     setImage(dateDirection);
 
 });
+
+
+$('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })

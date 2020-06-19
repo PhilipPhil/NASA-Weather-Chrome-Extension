@@ -11,13 +11,27 @@
 </head>
 
 <body class="text-center">
-    <!-- The Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01" src="https://apod.nasa.gov/apod/image/2006/Tadpoles-of-IC-410-Trevor-Jones.jpg" />
-        <div id="imgcaption"></div>
+
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modaldate" class="modal-title" id="exampleModalLongTitle"></h5>
+                    <div type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img id="modalimage" class="modal-content" id="img01" />
+                    <h5 id="modaltitle"></h5>
+                    <p id="modaldescription"></p>
+                    <a href="facebook.com"><i class="fa fa-info-circle" aria-hidden="true"></i> More Info</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--  -->
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
@@ -26,10 +40,9 @@
                     Date
                 </h4>
                 <nav class="nav nav-masthead justify-content-center">
-                    <!-- <a class="nav-link" href="https://mail.google.com/mail/"><i class="fa fa-envelope"></i> Gmail</a> -->
+                    <a class="nav-link" href="https://mail.google.com/mail/"><i class="fa fa-envelope"></i> Gmail</a>
                     <a id="goToApps" class="nav-link"><i class="fa fa-th"></i> Apps</a>
                     <a id="goToDefault" class="nav-link"><i class="fa fa-chrome"></i> Chrome Tab</a>
-                    <a id="fullscreen" class="nav-link"><i class="fa fa-expand"></i> Fullscreen</a>
                 </nav>
             </div>
         </header>
@@ -43,7 +56,7 @@
                 </div>
 
                 <div class="col">
-                    <h1 id="time" class="cover-heading" style="font-size: 390%; cursor: context-menu;"></h1>
+                    <h1 id="time" class="cover-heading" style="font-size: 390%; cursor: context-menu; font-family: monospace;"></h1>
                 </div>
 
                 <div class="col-auto align-self-center">
@@ -140,7 +153,7 @@
         </main>
         <footer class="mastfoot mt-auto mb-2">
             <div class="inner text-center">
-                <a href="https://apod.nasa.gov/apod/astropix.html" style="text-decoration: none;">
+                <a type="button" data-toggle="modal" data-target="#exampleModalLong" style="text-decoration: none;">
                     <h5 id="title" class="text-center">
                         Loading
                     </h5>

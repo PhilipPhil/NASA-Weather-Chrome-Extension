@@ -38,6 +38,7 @@ function addBackGround(data, dateDirection) {
         document.getElementById("modaldate").innerText = imgdate;
         document.getElementById("modaldescription").innerText = explanation;
         document.getElementById("modalimage").src = hdurl
+        document.getElementById("modalimage").alt = title
         document.getElementById("modalhdurl").href = hdurl
         document.body.style.backgroundImage = imgURL;
 
@@ -74,6 +75,7 @@ if (posYMD == localStorage['lastupdYMD']) {
     document.getElementById("modaldate").innerText = localStorage['imgdate'];
     document.getElementById("modaldescription").innerText = localStorage['explanation'];
     document.getElementById("modalimage").src = localStorage['hdurl']
+    document.getElementById("modalimage").alt = localStorage['title']
     document.getElementById("modalhdurl").href = localStorage['hdurl']
     document.body.style.backgroundImage = localStorage['imgURL'];
 } else {

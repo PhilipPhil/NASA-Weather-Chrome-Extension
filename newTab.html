@@ -7,9 +7,18 @@
     <title>New Tab</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/cover.css" />
+    <link rel="stylesheet" href="css/imagemodal.css" />
 </head>
 
 <body class="text-center">
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01" src="https://apod.nasa.gov/apod/image/2006/Tadpoles-of-IC-410-Trevor-Jones.jpg" />
+        <div id="imgcaption"></div>
+    </div>
+    <!--  -->
+
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
@@ -129,12 +138,10 @@
                 </div>
             </div>
         </main>
-
         <footer class="mastfoot mt-auto mb-2">
             <div class="inner text-center">
                 <a href="https://apod.nasa.gov/apod/astropix.html" style="text-decoration: none;">
-                    <h5 id="title" class="text-center" data-toggle="tooltip"
-                        title="Click here for more information about current image and past images.">
+                    <h5 id="title" class="text-center">
                         Loading
                     </h5>
                 </a>
@@ -155,6 +162,6 @@
 <script src="src/goto.js"></script>
 <script src="src/setimage.js"></script>
 <script src="src/setfavorites.js"></script>
-<script src="src/tooltip.js"></script>
+<script src="src/imageModal.js"></script>
 
 </html>

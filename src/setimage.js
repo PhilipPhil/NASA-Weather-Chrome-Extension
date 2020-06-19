@@ -1,6 +1,7 @@
 function setImage(dateDirection) {
     try {
         ymd = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
+        alert(APIUrl + ymd + key)
         fetch(APIUrl + ymd + key)
             .then((response) => response.json())
             .then((data) => addBackGround(data, dateDirection));

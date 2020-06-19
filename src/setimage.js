@@ -1,12 +1,19 @@
 function setImage(dateDirection) {
     try {
-        ymd = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
-        // alert(APIUrl + ymd + key);
-        fetch(APIUrl + ymd + key)
-            .then((response) => response.json())
-            .then((data) => addBackGround(data, dateDirection));
+        currDate = new Date()
+        if (positionDate > currDate) {
+            positionDate.setDate(positionDate.getDate() - 1);
+            setImage(-1);
+        } else {
+            ymd = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
+            console.log(APIUrl + ymd + key);
+            fetch(APIUrl + ymd + key)
+                .then((response) => response.json())
+                .then((data) => addBackGround(data, dateDirection));
+        }
     } catch {
-        if (positionDate >= new Date()) {
+        currDate = new Date()
+        if (positionDate > currDate) {
             positionDate.setDate(positionDate.getDate() - 1);
             setImage(-1);
         } else {
@@ -106,7 +113,7 @@ document.getElementById("right").addEventListener("click", function (e) {
     }
 });
 
-document.addEventListener("keydown", function (event) {
+document.addEventListener("keyup", function (event) {
     const key = event.key;
     switch (key) {
         case "ArrowRight":
@@ -115,7 +122,6 @@ document.addEventListener("keydown", function (event) {
             currDate = new Date();
             if (positionDate > currDate) {
                 positionDate.setDate(positionDate.getDate() - 1);
-                break;
             } else {
                 if (positionDate.getFullYear() == currDate.getFullYear() &&
                     positionDate.getMonth() == currDate.getMonth() &&
@@ -123,8 +129,8 @@ document.addEventListener("keydown", function (event) {
                     document.getElementById("right").style.visibility = "hidden";
                 }
                 setImage(dateDirection);
-                break;
             }
+            break;
         case "ArrowLeft":
             document.getElementById("right").style.visibility = "visible";
             dateDirection = -1;

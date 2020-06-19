@@ -2,42 +2,114 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ei=edge">
-    <link rel="stylesheet" href="css/rotate.css">
-    <title>Earth Weather</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ei=edge" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 
 <body>
-    <div class="card" style="width: 24rem;">
-        <div class="container"
-            style="padding: 0px; position: relative; text-align: center; color: #fff; background-color: black;">
-            
-            <img id="geoImage" class="card-img-top" src="img/misc/earthspinning.gif" alt="Location">
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-                type="text/javascript"></script>
-            <div id="geoLocation" style="position: absolute; bottom: 8px; left: 16px;">Loading</div>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-7">
-                    <h5 id="city" class="card-title" style="margin-top: 0; margin-bottom: 2px;"></h5>
-                    <h5 id="description" class="card-subtitle text-muted" style="margin-top: 0; margin-bottom: 2px;">
-                    </h5>
-                    <p id='sunrise' style="margin-top: 0; margin-bottom: 2px;"></p>
-                    <p id='sunset' style="margin-top: 0; margin-bottom: 2px;"></p>
-                </div>
-                <div class="col-5" style="margin-left: 0;">
-                    <h5 id="cel" class="card-title text-right"
-                        style="margin-top: 0; margin-bottom: 2px; font-size: 275%"></h5>
-                    <h5 id="far" class="card-title text-right"
-                        style="margin-top: 0; margin-bottom: 2px; font-size: 275%"></h5>
-                </div>
+    <!-- Card -->
+    <div class="card weather-card" style="min-width: 24rem;">
+        <!-- Card content -->
+        <div class="card-body pb-3">
+            <!-- Title -->
+            <h4 class="card-title">Warsaw</h4>
+            <!-- Text -->
+            <p class="card-text">Mon, 12:30 PM, Mostly Sunny</p>
+            <div class="d-flex justify-content-between">
+                <p class="display-1 ">
+                    <span>23</span><sup style="font-size: 60%; font-weight: 390;">&deg;C</sup>
+                </p>
+                <i class="fa fa-sun-o fa-5x pt-3 text-warning"></i>
+            </div>
+
+            <div class="d-flex justify-content-between mb-0">
+                <p>
+                    <i class="fa fa-sun-o fa-lg text-warning pr-2"></i>44:44 am Sunrise
+                </p>
+                <p><i class="fa fa-tint fa-lg text-info pr-2"></i>3% Precipitation</p>
+            </div>
+
+            <div class="d-flex justify-content-between mb-0">
+                <p>
+                    <i class="fa fa-moon-o fa-lg text-dark pr-2"></i>44:44 am pm Sunset
+                </p>
+                <p>
+                    <i class="fa fa-leaf fa-lg text-secondary pr-2"></i>21 km/h Winds
+                </p>
+            </div>
+
+            <div class="collapse" id="collapseExample">
+                <table class="table table-borderless table-sm mb-0">
+                    <tbody>
+                        <tr>
+                            <td class="font-weight-normal align-middle">Tuesday</td>
+                            <td class="float-right font-weight-normal">
+                                <p class="mb-1">24°<span class="text-muted">/12°</span></p>
+                            </td>
+                            <td class="float-right mr-3">
+                                <i class="fa fa-sun-o fa-lg text-warning"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-normal align-middle">Wednesday</td>
+                            <td class="float-right font-weight-normal">
+                                <p class="mb-1">19°<span class="text-muted">/10°</span></p>
+                            </td>
+                            <td class="float-right mr-3">
+                                <i class="fa fa-cloud-sun-rain-o fa-lg text-info"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-normal align-middle">Thursday</td>
+                            <td class="float-right font-weight-normal">
+                                <p class="mb-1">23°<span class="text-muted">/15°</span></p>
+                            </td>
+                            <td class="float-right mr-3">
+                                <i class="fa fa-sun-o fa-lg amber-text"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-normal align-middle">Friday</td>
+                            <td class="float-right font-weight-normal">
+                                <p class="mb-1">26°<span class="text-muted">/19°</span></p>
+                            </td>
+                            <td class="float-right mr-3">
+                                <i class="fas fa-sun fa-lg amber-text"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-normal align-middle">Saturday</td>
+                            <td class="float-right font-weight-normal">
+                                <p class="mb-1">20°<span class="text-muted">/16°</span></p>
+                            </td>
+                            <td class="float-right mr-3">
+                                <i class="fa fa-cloud fa-lg text-info"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-weight-normal align-middle">Sunday</td>
+                            <td class="float-right font-weight-normal">
+                                <p class="mb-1">22°<span class="text-muted">/13°</span></p>
+                            </td>
+                            <td class="float-right mr-3">
+                                <i class="fa fa-cloud-sun fa-lg text-info"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        <div class="card-footer">
+            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+                Expand
+            </a>
+        </div>
     </div>
+    <!-- Card -->
 </body>
 
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
@@ -45,9 +117,9 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="node_modules/psl/dist/psl.min.js"></script>
 
-<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
 
-<script src="src/popup.js"></script>
+<!-- <script src="src/popup.js"></script> -->
 
 </html>

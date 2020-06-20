@@ -1,6 +1,8 @@
 function setImage(dateDirection) {
+    currDate = new Date()
+    currDate = new Date(currDate.toUTCString());
+    currDate.setHours(currDate.getHours() - 8);
     try {
-        currDate = new Date()
         if (positionDate > currDate) {
             positionDate.setDate(positionDate.getDate() - 1);
             setImage(-1);
@@ -12,7 +14,6 @@ function setImage(dateDirection) {
                 .then((data) => addBackGround(data, dateDirection));
         }
     } catch {
-        currDate = new Date()
         if (positionDate > currDate) {
             positionDate.setDate(positionDate.getDate() - 1);
             setImage(-1);
@@ -74,7 +75,8 @@ positionDate.setHours(positionDate.getHours() - 8);
 const posYMD = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
 
 document.getElementById("right").style.visibility = "hidden";
-
+alert(posYMD)
+alert(localStorage["lastupdYMD"])
 if (posYMD == localStorage["lastupdYMD"]) {
     document.getElementById("apodURL").href = localStorage["apodURL"];
     document.getElementById("modaltitle").innerText = localStorage["title"];
@@ -100,7 +102,10 @@ document.getElementById("left").addEventListener("click", function (e) {
 document.getElementById("right").addEventListener("click", function (e) {
     dateDirection = 1;
     positionDate.setDate(positionDate.getDate() + dateDirection);
-    currDate = new Date();
+    currDate = new Date()
+    currDate = new Date(currDate.toUTCString());
+    currDate.setHours(currDate.getHours() - 8);
+
     if (positionDate > currDate) {
         positionDate.setDate(positionDate.getDate() - 1);
     } else {
@@ -119,7 +124,9 @@ document.addEventListener("keyup", function (event) {
         case "ArrowRight":
             dateDirection = 1;
             positionDate.setDate(positionDate.getDate() + dateDirection);
-            currDate = new Date();
+            currDate = new Date()
+            currDate = new Date(currDate.toUTCString());
+            currDate.setHours(currDate.getHours() - 8);
             if (positionDate > currDate) {
                 positionDate.setDate(positionDate.getDate() - 1);
             } else {

@@ -14,4 +14,4 @@ settime()
 setdate()
 
 setInterval(settime, 1)
-setInterval(setdate, 1000)
+setInterval(setdate, 1000*60)

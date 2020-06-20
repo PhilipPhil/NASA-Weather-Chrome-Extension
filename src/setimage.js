@@ -75,8 +75,6 @@ positionDate.setHours(positionDate.getHours() - 8);
 const posYMD = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
 
 document.getElementById("right").style.visibility = "hidden";
-alert(posYMD)
-alert(localStorage["lastupdYMD"])
 if (posYMD == localStorage["lastupdYMD"]) {
     document.getElementById("apodURL").href = localStorage["apodURL"];
     document.getElementById("modaltitle").innerText = localStorage["title"];

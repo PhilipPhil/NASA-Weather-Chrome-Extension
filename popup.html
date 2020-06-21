@@ -10,18 +10,18 @@
 </head>
 
 <body>
-    <div class="card weather-card" style="width: 24rem;">
+    <div class="card" style="width: 24rem;">
         <div class="card-body pb-2">
             <h4 id="city" class="card-title"></h4>
-            <p id="current-weather-description" class="card-text"></p>
+            <p id="current-weather-description" class="card-subtitle"></p>
             <div class="d-flex justify-content-between">
                 <p class="display-1 ">
                     <span id="current-temp"></span><sup style="font-size: 60%; font-weight: 390;">&deg;C</sup>
                 </p>
                 <div>
-                    <img id="current-weather-icon" style="width: 50px; height: 50px;"></img>
-                    <p>Min: <span id="current-min"></span>&deg;C</p>
-                    <p>Max: <span id="current-max"></span>&deg;C</p>
+                    <img id="current-weather-icon" style="width: 50px; height: 50px; margin: 0; padding: 0;"/>
+                    <p style="margin: 0; padding: 0;">Max: <span id="current-max"></span>&deg;C</p>
+                    <p style="margin: 0; padding: 0;">Min: <span id="current-min"></span>&deg;C</p>
                 </div>
             </div>
 
@@ -45,57 +45,57 @@
                 <table class="table table-borderless table-sm mb-0">
                     <tbody>
                         <tr>
-                            <td class="font-weight-normal align-middle">Tuesday</td>
+                            <td id="day1" class="font-weight-normal align-middle"></td>
                             <td class="float-right font-weight-normal">
-                                <p class="mb-1">24°<span class="text-muted">/12°</span></p>
+                                <p class="mb-1"><span id="max1"></span>&deg;<span class="text-muted">/<span id="min1"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <i class="fa fa-sun-o fa-lg text-warning"></i>
+                                <img id="img1" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-weight-normal align-middle">Wednesday</td>
+                            <td id="day2" class="font-weight-normal align-middle"></td>
                             <td class="float-right font-weight-normal">
-                                <p class="mb-1">19°<span class="text-muted">/10°</span></p>
+                                <p class="mb-1"><span id="max2"></span>&deg;<span class="text-muted">/<span id="min2"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <i class="fa fa-snowflake-o fa-lg text-info"></i>
+                                <img id="img2" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-weight-normal align-middle">Thursday</td>
+                            <td id="day3" class="font-weight-normal align-middle"></td>
                             <td class="float-right font-weight-normal">
-                                <p class="mb-1">23°<span class="text-muted">/15°</span></p>
+                                <p class="mb-1"><span id="max3"></span>&deg;<span class="text-muted">/<span id="min3"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <i class="fa fa-bolt fa-lg text-warning"></i>
+                                <img id="img3" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-weight-normal align-middle">Friday</td>
+                            <td id="day4" class="font-weight-normal align-middle"></td>
                             <td class="float-right font-weight-normal">
-                                <p class="mb-1">26°<span class="text-muted">/19°</span></p>
+                                <p class="mb-1"><span id="max4"></span>&deg;<span class="text-muted">/<span id="min4"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <i class="fa fa-tint fa-lg text-primary"></i>
+                                <img id="img4" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-weight-normal align-middle">Saturday</td>
+                            <td id="day5" class="font-weight-normal align-middle"></td>
                             <td class="float-right font-weight-normal">
-                                <p class="mb-1">20°<span class="text-muted">/16°</span></p>
+                                <p class="mb-1"><span id="max5"></span>&deg;<span class="text-muted">/<span id="min5"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <i class="fa fa-cloud fa-lg text-muted"></i>
+                                <img id="img5" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-weight-normal align-middle">Sunday</td>
+                            <td id="day6" class="font-weight-normal align-middle"></td>
                             <td class="float-right font-weight-normal">
-                                <p class="mb-1">22°<span class="text-muted">/13°</span></p>
+                                <p class="mb-1"><span id="max6"></span>&deg;<span class="text-muted">/<span id="min6"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <i class="fa fa-cloud-sun fa-lg text-info"></i>
+                                <img id="img6" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
                             </td>
                         </tr>
                     </tbody>

@@ -7,6 +7,7 @@ function showMap(position) {
     lat = position.coords.latitude
     lon = position.coords.longitude
     setCurrent(lat, lon)
+    setList(lat, lon)
 }
 
 function setCurrent(lat, lon) {
@@ -20,14 +21,14 @@ function setCurrent(lat, lon) {
 function getCurrent(data) {
     dt = new Date()
     description = data.weather[0].description.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
-    day = dt.toString().split(' ')[0];
-    time = getTime(dt)
-    currentweathericon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
+    day = weekday[dt.getDay()];
+    time = getTime(dt);
+    currentweathericon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     celsius = Math.round(data.main.temp - 273.15)
-    sunrise = (new Date(data.sys.sunrise * 1000)).toLocaleTimeString()
-    sunset = (new Date(data.sys.sunset * 1000)).toLocaleTimeString()
+    sunrise = getTime(new Date(data.sys.sunrise * 1000))
+    sunset = getTime(new Date(data.sys.sunset * 1000))
     humidity = data.main.humidity
-    windspeed = data.wind.speed
+    windspeed = (data.wind.speed * 3.6).toFixed(1)
     city = data.name
     min = Math.round(data.main.temp_min - 273.15)
     max = Math.round(data.main.temp_max - 273.15)
@@ -40,11 +41,53 @@ function getCurrent(data) {
     document.getElementById('current-humidity').innerText = humidity
     document.getElementById('current-windspeed').innerText = windspeed
     document.getElementById('city').innerText = city
+}
+
+function setList(lat, lon) {
+    apikey = '3e7cd6048bd8114abedeee14fcc11575'
+    const urlapi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${apikey}`
+    fetch(urlapi)
+        .then(response => response.json())
+        .then(data => getList(data));
+}
+
+function getList(data){
+
+    day = data.daily[0]
+    min = Math.round(day.temp.min - 273.15)
+    max = Math.round(day.temp.max - 273.15)
     document.getElementById('current-min').innerText = min
     document.getElementById('current-max').innerText = max
+
+    for(i = 1; i < 7; i++){
+        day = data.daily[i]
+
+        min = Math.round(day.temp.min - 273.15)
+        max = Math.round(day.temp.max - 273.15)
+        dayi = 'day' + i
+        mini = 'min' + i
+        maxi = 'max' + i
+        imgi = 'img' + i
+        currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
+        daystring = weekday[(new Date(day.dt * 1000)).getDay()]
+
+        document.getElementById(dayi).innerText = daystring
+        document.getElementById(mini).innerText = min
+        document.getElementById(maxi).innerText = max
+        document.getElementById(imgi).src = currentweathericon
+    }
+
+ 
 }
 
 
-
+var weekday=new Array(7);
+weekday[0]="Monday";
+weekday[1]="Tuesday";
+weekday[2]="Wednesday";
+weekday[3]="Thursday";
+weekday[4]="Friday";
+weekday[5]="Saturday";
+weekday[6]="Sunday";
 
 navigator.geolocation.getCurrentPosition(showMap);

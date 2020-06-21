@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ei=edge" />
     <title>Weather</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/popup.css" />
 </head>
 
 <body>
@@ -19,13 +20,8 @@
                     <span id="current-temp"></span><sup style="font-size: 60%; font-weight: 390;">&deg;C</sup>
                 </p>
                 <div>
-                    <div class="row">
-                        <img id="current-weather-icon" style="width: 50px; height: 50px; margin: 0; padding: 0;" alt="weatherimage"/>
-                        <img id="day-weather-icon" style="width: 50px; height: 50px; margin: 0; padding: 0;" alt="weatherimage"/>
-                    </div>
-
-                    <p style="margin: 0; padding: 0;">Max: <span id="current-max"></span>&deg;C</p>
-                    <p style="margin: 0; padding: 0;">Min: <span id="current-min"></span>&deg;C</p>
+                    <img id="day-weather-icon" style="width: 50px; height: 50px; margin: 0; padding: 0; margin-top: 15px; margin-bottom: -16px; margin-left: 28px;" alt="weatherimage"/>
+                    <p class="mb-1" style="font-size: 200%;"><span id="current-max"></span>&deg;<span class="text-muted">/<span id="current-min"></span>&deg;</span></p>
                 </div>
             </div>
 
@@ -54,7 +50,7 @@
                                 <p class="mb-1"><span id="max1"></span>&deg;<span class="text-muted">/<span id="min1"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <img id="img1" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
+                                <img id="img1"/>
                             </td>
                         </tr>
                         <tr>
@@ -63,7 +59,7 @@
                                 <p class="mb-1"><span id="max2"></span>&deg;<span class="text-muted">/<span id="min2"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <img id="img2" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
+                                <img id="img2"/>
                             </td>
                         </tr>
                         <tr>
@@ -72,7 +68,7 @@
                                 <p class="mb-1"><span id="max3"></span>&deg;<span class="text-muted">/<span id="min3"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <img id="img3" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
+                                <img id="img3" />
                             </td>
                         </tr>
                         <tr>
@@ -81,7 +77,7 @@
                                 <p class="mb-1"><span id="max4"></span>&deg;<span class="text-muted">/<span id="min4"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <img id="img4" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
+                                <img id="img4" />
                             </td>
                         </tr>
                         <tr>
@@ -90,7 +86,7 @@
                                 <p class="mb-1"><span id="max5"></span>&deg;<span class="text-muted">/<span id="min5"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <img id="img5" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
+                                <img id="img5" />
                             </td>
                         </tr>
                         <tr>
@@ -99,7 +95,7 @@
                                 <p class="mb-1"><span id="max6"></span>&deg;<span class="text-muted">/<span id="min6"></span>&deg;</span></p>
                             </td>
                             <td class="float-right mr-3">
-                                <img id="img6" style="width: 25px; height: 25px; margin: 0; padding: 0;"/>
+                                <img id="img6" />
                             </td>
                         </tr>
                     </tbody>

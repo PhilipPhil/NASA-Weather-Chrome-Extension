@@ -1,14 +1,13 @@
 function setImage(dateDirection) {
     currDate = new Date()
     currDate = new Date(currDate.toUTCString());
-    currDate.setHours(currDate.getHours() - 8);
+    currDate.setHours(currDate.getHours() - hourdelay);
     try {
         if (positionDate > currDate) {
             positionDate.setDate(positionDate.getDate() - 1);
             setImage(-1);
         } else {
             ymd = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
-            console.log(APIUrl + ymd + key);
             fetch(APIUrl + ymd + key)
                 .then((response) => response.json())
                 .then((data) => addBackGround(data, dateDirection));
@@ -65,15 +64,15 @@ function addBackGround(data, dateDirection) {
     }
 }
 
+const hourdelay = 4
 const APIUrl = "https://api.nasa.gov/planetary/apod?date=";
 const key = "&api_key=iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5";
 
 var positionDate = new Date();
 positionDate = new Date(positionDate.toUTCString());
-positionDate.setHours(positionDate.getHours() - 8);
+positionDate.setHours(positionDate.getHours() - hourdelay);
 
 const posYMD = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
-
 document.getElementById("right").style.visibility = "hidden";
 if (posYMD == localStorage["lastupdYMD"]) {
     document.getElementById("apodURL").href = localStorage["apodURL"];
@@ -102,7 +101,7 @@ document.getElementById("right").addEventListener("click", function (e) {
     positionDate.setDate(positionDate.getDate() + dateDirection);
     currDate = new Date()
     currDate = new Date(currDate.toUTCString());
-    currDate.setHours(currDate.getHours() - 8);
+    currDate.setHours(currDate.getHours() - hourdelay);
 
     if (positionDate > currDate) {
         positionDate.setDate(positionDate.getDate() - 1);
@@ -124,7 +123,7 @@ document.addEventListener("keyup", function (event) {
             positionDate.setDate(positionDate.getDate() + dateDirection);
             currDate = new Date()
             currDate = new Date(currDate.toUTCString());
-            currDate.setHours(currDate.getHours() - 8);
+            currDate.setHours(currDate.getHours() - hourdelay);
             if (positionDate > currDate) {
                 positionDate.setDate(positionDate.getDate() - 1);
             } else {

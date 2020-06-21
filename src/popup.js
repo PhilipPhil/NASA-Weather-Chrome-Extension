@@ -52,17 +52,16 @@ function setList(lat, lon) {
 function getList(data){
 
     day = data.daily[0]
+    
     min = Math.round(day.temp.min - 273.15)
     max = Math.round(day.temp.max - 273.15)
     currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
-
     document.getElementById('current-min').innerText = min
     document.getElementById('current-max').innerText = max
     document.getElementById('day-weather-icon').src = currentweathericon
 
     for(i = 1; i < 7; i++){
         day = data.daily[i]
-
         min = Math.round(day.temp.min - 273.15)
         max = Math.round(day.temp.max - 273.15)
         currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`

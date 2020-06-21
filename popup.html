@@ -10,30 +10,34 @@
 </head>
 
 <body>
-    <div class="card weather-card" style="min-width: 24rem;">
+    <div class="card weather-card" style="width: 24rem;">
         <div class="card-body pb-2">
-            <h4 class="card-title">Warsaw</h4>
-            <p class="card-text">Mon, 12:30 PM, Mostly Sunny</p>
+            <h4 id="city" class="card-title"></h4>
+            <p id="current-weather-description" class="card-text"></p>
             <div class="d-flex justify-content-between">
                 <p class="display-1 ">
-                    <span>23</span><sup style="font-size: 60%; font-weight: 390;">&deg;C</sup>
+                    <span id="current-temp"></span><sup style="font-size: 60%; font-weight: 390;">&deg;C</sup>
                 </p>
-                <i class="fa fa-sun-o fa-5x pt-3 text-warning"></i>
+                <div>
+                    <img id="current-weather-icon" style="width: 50px; height: 50px;"></img>
+                    <p>Min: <span id="current-min"></span>&deg;C</p>
+                    <p>Max: <span id="current-max"></span>&deg;C</p>
+                </div>
             </div>
 
             <div class="d-flex justify-content-between mb-0">
                 <p>
-                    <i class="fa fa-sun-o fa-lg text-warning pr-2"></i>44:44 am Sunrise
+                    <i class="fa fa-sun-o fa-lg text-warning pr-2"></i><span id="current-sunrise"></span> Sunrise
                 </p>
-                <p><i class="fa fa-tint fa-lg text-primary pr-2"></i>3% Precipitation</p>
+                <p><i class="fa fa-tint fa-lg text-primary pr-2"></i><span id="current-humidity"></span>% Humidity</p>
             </div>
 
             <div class="d-flex justify-content-between mb-0">
                 <p>
-                    <i class="fa fa-moon-o fa-lg text-dark pr-2"></i>44:44 am pm Sunset
+                    <i class="fa fa-moon-o fa-lg text-dark pr-2"></i><span id="current-sunset"></span> Sunset
                 </p>
                 <p>
-                    <i class="fa fa-leaf fa-lg text-secondary pr-2"></i>21 km/h Winds
+                    <i class="fa fa-leaf fa-lg text-secondary pr-2"></i><span id="current-windspeed"></span> km/h Winds
                 </p>
             </div>
 
@@ -116,6 +120,6 @@
 <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
 <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
 
-<!-- <script src="src/popup.js"></script> -->
+<script src="src/popup.js"></script>
 
 </html>

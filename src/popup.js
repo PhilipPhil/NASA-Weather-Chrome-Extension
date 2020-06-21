@@ -91,3 +91,13 @@ weekday[5]="Saturday";
 weekday[6]="Sunday";
 
 navigator.geolocation.getCurrentPosition(showMap);
+
+document.getElementById('togglebutton').addEventListener('click', function(e){
+    text = document.getElementById('togglebutton').innerText
+    if(text == 'Expand'){
+        document.getElementById('togglebutton').innerText = 'Collapse'
+    } else {
+        document.getElementById('togglebutton').innerText = 'Expand'
+    }
+
+})

@@ -65,12 +65,12 @@ function getList(data){
 
         min = Math.round(day.temp.min - 273.15)
         max = Math.round(day.temp.max - 273.15)
+        currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
+        daystring = weekday[(new Date(day.dt * 1000)).getDay()]
         dayi = 'day' + i
         mini = 'min' + i
         maxi = 'max' + i
         imgi = 'img' + i
-        daystring = weekday[(new Date(day.dt * 1000)).getDay()]
-
         document.getElementById(dayi).innerText = daystring
         document.getElementById(mini).innerText = min
         document.getElementById(maxi).innerText = max

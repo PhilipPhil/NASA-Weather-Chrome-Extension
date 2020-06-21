@@ -54,8 +54,11 @@ function getList(data){
     day = data.daily[0]
     min = Math.round(day.temp.min - 273.15)
     max = Math.round(day.temp.max - 273.15)
+    currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
+
     document.getElementById('current-min').innerText = min
     document.getElementById('current-max').innerText = max
+    document.getElementById('day-weather-icon').src = currentweathericon
 
     for(i = 1; i < 7; i++){
         day = data.daily[i]
@@ -66,7 +69,6 @@ function getList(data){
         mini = 'min' + i
         maxi = 'max' + i
         imgi = 'img' + i
-        currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
         daystring = weekday[(new Date(day.dt * 1000)).getDay()]
 
         document.getElementById(dayi).innerText = daystring
@@ -78,7 +80,6 @@ function getList(data){
  
 }
 
-
 var weekday=new Array(7);
 weekday[0]="Sunday";
 weekday[1]="Monday";
@@ -87,7 +88,6 @@ weekday[3]="Wednesday";
 weekday[4]="Thursday";
 weekday[5]="Friday";
 weekday[6]="Saturday";
-
 
 navigator.geolocation.getCurrentPosition(showMap);
 
@@ -98,5 +98,4 @@ document.getElementById('togglebutton').addEventListener('click', function(e){
     } else {
         document.getElementById('togglebutton').innerText = 'Expand'
     }
-
 })

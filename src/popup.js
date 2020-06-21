@@ -30,8 +30,6 @@ function getCurrent(data) {
     humidity = data.main.humidity
     windspeed = (data.wind.speed * 3.6).toFixed(1)
     city = data.name
-    min = Math.round(data.main.temp_min - 273.15)
-    max = Math.round(data.main.temp_max - 273.15)
 
     document.getElementById('current-weather-description').innerText = day + ', ' + time + ', ' + description
     document.getElementById('current-weather-icon').src = currentweathericon
@@ -82,13 +80,14 @@ function getList(data){
 
 
 var weekday=new Array(7);
-weekday[0]="Monday";
-weekday[1]="Tuesday";
-weekday[2]="Wednesday";
-weekday[3]="Thursday";
-weekday[4]="Friday";
-weekday[5]="Saturday";
-weekday[6]="Sunday";
+weekday[0]="Sunday";
+weekday[1]="Monday";
+weekday[2]="Tuesday";
+weekday[3]="Wednesday";
+weekday[4]="Thursday";
+weekday[5]="Friday";
+weekday[6]="Saturday";
+
 
 navigator.geolocation.getCurrentPosition(showMap);
 

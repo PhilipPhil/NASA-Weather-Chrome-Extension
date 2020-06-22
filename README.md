@@ -1,18 +1,20 @@
 # NASA Astronomy Picture Of The Day Chrome New Tab Extension
- Fully responsive new tab chrome extension that displays NASA's astronomy picture of the day, as well as satellite images and weather updates on your current location.
+ Fully responsive new tab chrome extension that displays NASA's astronomy picture of the day, as well as weekly weather forecast.
 
 This app was morphed from my origional Star Wars weather chrome extension. [Can be seen here](https://github.com/PhilipPhil/Star-Wars-Weather-Chrome-Extension).
 
 Features:
 - Sets background to NASA's astronomy picture of the day.
 - Links to your most visited websites.
-- Shortcuts for Gmail, Google Images, and the Apps store.
-- Link that takes you to the default new tab page.
+- Editable favorites links.
+- Shortcuts for gmail, apps, and the original chrome extension.
 - Google search bar.
-- Fully responsive design. 
-- Popup features that displayes current city, temperature, weather, and geo-location image.
-- Weather updates of current location with popup.
-- Link for displayed image information page.
+- Exact current time.
+- More information modal when the title is clicked.
+- Press left/right on screen arrows to rotate through past images.
+- Press left/right keyboard keys to rotate through past images.
+- Popup that displayes weekly weather forcasts for current location.
+- Fully responsive design.
 
 Install:
 - npm install bootstrap
@@ -23,10 +25,9 @@ Install:
 - npm install psl
 
 Api’s:
-- Weather: openweathermap API
+- Weather: openweathermap API "One Call API" and "Current Weather Data"
 - Logos: clearbit Logo API
 - Background Image: NASA APOD APi
-- Geopin Location Image: NASA Earth Api
 - TopSites: chrome.topSites Api
 - GeoLocation: Geolocation API
 

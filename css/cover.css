@@ -22,6 +22,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-color: black;
 }
 
 .cover-container {
@@ -70,12 +71,6 @@ body {
   color: #fff;
 }
 
-.favorite:hover {
-  border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.10); 
-  box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.1); 
-}
-
 .modal-content {
   background-color: transparent !important;
   border: none;
@@ -89,6 +84,10 @@ body {
   border: none;
 }
 
+.modal-footer {
+  border: none;
+}
+
 .hoverdarken, .nav-link {
   cursor: pointer;
 }
@@ -96,4 +95,50 @@ body {
 .hoverdarken:hover {
   color: rgb(200, 200, 200);
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+
+/*  */
+
+.favorite {
+  padding-top: 12px;
+  margin-bottom: 6px;
+  /* background-color: rgba(255, 0, 0, 0.1); */
+}
+
+.favorite p {
+  padding: 6px;
+  padding-bottom: 12px;
+}
+
+.favorite:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  }
+
+.aboutfav {
+  display: block;
+  margin-bottom: -18px;
+  float: right;
+  /* display: none; */
+}
+
+
+.hoversee {
+  color: transparent;
+  text-shadow: none;
+}
+
+.hoversee:hover {
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.hoversee:hover .fa-ellipsis-v:hover{
+  color: rgb(200, 200, 200);
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+#favmod {
+  width: 22rem;
 }

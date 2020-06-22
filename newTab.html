@@ -11,20 +11,60 @@
 
 <body class="text-center">
 
+    <!--  -->
 
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    <div class="modal fade" id="favoriteModalCenter" tabindex="-1" role="dialog" aria-labelledby="favoriteModalCenter"
+        aria-hidden="true">
+        <div id="favmod" class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add shortcut</h5>
+                    <div type="button" data-dismiss="modal" aria-label="Close">
+                        <span class="hoverdarken" aria-hidden="true"><i class="fa fa-times fa-lg"
+                                aria-hidden="true"></i></span>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="modal-body">
+
+                        <div class="form-group text-left">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" id="inputName" aria-describedby="inputName" minlength="1" maxlength="34">
+                        </div>
+                        <div class="form-group text-left">
+                            <label for="inputURL">URL</label>
+                            <input type="url" class="form-control" id="inputURL" aria-describedby="inputURL">
+                        </div>
+
+                        <input type="text" class="form-control" id="inputID">
+
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary">Remove</button>
+                            <button type="submit" class="btn btn-primary">Set</button>
+                        </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--  -->
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="modaldate"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modaldate" class="modal-title" id="exampleModalLongTitle"></h5>
+                    <h5 id="modaldate" class="modal-title"></h5>
                     <div type="button" data-dismiss="modal" aria-label="Close">
-                        <span class="hoverdarken" aria-hidden="true"><i class="fa fa-times fa-lg" aria-hidden="true"></i></span>
+                        <span class="hoverdarken" aria-hidden="true"><i class="fa fa-times fa-lg"
+                                aria-hidden="true"></i></span>
                     </div>
                 </div>
                 <div class="modal-body">
                     <a id="modalhdurl" target="_blank">
-                    <img id="modalimage" class="modal-content" id="img01" />
+                        <img id="modalimage" class="modal-content" id="img01" />
                     </a>
                     <h5 id="modaltitle"></h5>
                     <p id="modaldescription"></p>
@@ -57,7 +97,8 @@
                 </div>
 
                 <div class="col">
-                    <h1 id="time" class="cover-heading" style="font-size: 390%; cursor: context-menu; font-family: monospace;"></h1>
+                    <h1 id="time" class="cover-heading"
+                        style="font-size: 390%; cursor: context-menu; font-family: monospace;"></h1>
                 </div>
 
                 <div class="col-auto align-self-center">
@@ -78,79 +119,55 @@
                 </div>
             </div>
             <div class="row">
-                <div id="fav1" class="col-3 mb-2" style="text-decoration: none;" data-whatever="1">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
+
+                <div id="fav1" class="col-3" style="text-decoration: none;">
+
+                </div>
+
+                <div id="fav2" class="col-3" style="text-decoration: none;">
+                    <!-- <a class="hoverdarken" href="#"
+                        style="text-decoration: none;">
+                        <div class="aboutfav">
+                            <span>&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
                         </div>
                     </a>
-                </div>
-                <div id="fav2" class="col-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
+                    <a id="fav2href" href="https://www.google.com/docs/about/" style="text-decoration: none;">
+                        <div class="favorite" >
+                            <div>
+                                <i id="fav2addicon" style="border-radius: 50%; width: 50px; height: 50px;"
                                 class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
+                                <img id="fav2img" alt="Link1" style="display: none; border-radius: 50%; width: 50px; height: 50px;">
+                            </div>
+                            <p id="fav2addtext">Add shortcut</p>
+                            <p id="fav2name" style='word-wrap: break-word; display: none;'>Max 30-45 characters</p>
                         </div>
-                    </a>
+                    </a> -->
                 </div>
-                <div id="fav3" class="col-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
-                        </div>
-                    </a>
+
+                <div id="fav3" class="col-3" style="text-decoration: none;">
+
                 </div>
-                <div id="fav4" class="col-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
-                        </div>
-                    </a>
+
+                <div id="fav4" class="col-3" style="text-decoration: none;">
+
                 </div>
-                <div id="fav5" class="col-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
-                        </div>
-                    </a>
+
+                <div id="fav5" class="col-3" style="text-decoration: none;">
+
                 </div>
-                <div id="fav6" class="col-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
-                        </div>
-                    </a>
+
+                <div id="fav6" class="col-3" style="text-decoration: none;">
+
                 </div>
-                <div id="fav7" class="col-3 col-sm-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
-                        </div>
-                    </a>
+
+                <div id="fav7" class="col-3" style="text-decoration: none;">
+
                 </div>
-                <div id="fav8" class="col-3 mb-2" style="text-decoration: none;">
-                    <a href="#" style="text-decoration: none;">
-                        <div class="favorite">
-                            <i style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                            <p style="word-wrap: break-word;">Missing</p>
-                        </div>
-                    </a>
+
+                <div id="fav8" class="col-3" style="text-decoration: none;">
+
                 </div>
-            </div>
+
         </main>
         <footer class="mastfoot mt-auto mb-2">
             <div class="inner text-center">

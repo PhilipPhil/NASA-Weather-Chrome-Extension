@@ -11,26 +11,23 @@
 
 <body class="text-center">
 
-    <!--  -->
-
-    <div class="modal fade" id="favoriteModalCenter" tabindex="-1" role="dialog" aria-labelledby="favoriteModalCenter"
+    <div class="modal fade" id="favoriteModalCenter" tabindex="-1" role="dialog" aria-labelledby="modaldate"
         aria-hidden="true">
         <div id="favmod" class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add shortcut</h5>
+                    <h5 class="modal-title">Add shortcut</h5>
                     <div type="button" data-dismiss="modal" aria-label="Close">
                         <span class="hoverdarken" aria-hidden="true"><i class="fa fa-times fa-lg"
                                 aria-hidden="true"></i></span>
                     </div>
                 </div>
-
-                <form>
-                    <div class="modal-body">
-
+                <div class="modal-body">
+                    <form>
                         <div class="form-group text-left">
                             <label for="inputName">Name</label>
-                            <input type="text" class="form-control" id="inputName" aria-describedby="inputName" minlength="1" maxlength="34">
+                            <input type="text" class="form-control" id="inputName" aria-describedby="inputName"
+                                minlength="1" maxlength="34">
                         </div>
                         <div class="form-group text-left">
                             <label for="inputURL">URL</label>
@@ -43,15 +40,13 @@
                             <button class="btn btn-secondary">Remove</button>
                             <button type="submit" class="btn btn-primary">Set</button>
                         </div>
-                </form>
-
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <!--  -->
 
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="modaldate"
+    <div class="modal fade" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="modaldate"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -125,23 +120,7 @@
                 </div>
 
                 <div id="fav2" class="col-3" style="text-decoration: none;">
-                    <!-- <a class="hoverdarken" href="#"
-                        style="text-decoration: none;">
-                        <div class="aboutfav">
-                            <span>&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
-                        </div>
-                    </a>
-                    <a id="fav2href" href="https://www.google.com/docs/about/" style="text-decoration: none;">
-                        <div class="favorite" >
-                            <div>
-                                <i id="fav2addicon" style="border-radius: 50%; width: 50px; height: 50px;"
-                                class="fa fa-plus-circle fa-2x"></i>
-                                <img id="fav2img" alt="Link1" style="display: none; border-radius: 50%; width: 50px; height: 50px;">
-                            </div>
-                            <p id="fav2addtext">Add shortcut</p>
-                            <p id="fav2name" style='word-wrap: break-word; display: none;'>Max 30-45 characters</p>
-                        </div>
-                    </a> -->
+
                 </div>
 
                 <div id="fav3" class="col-3" style="text-decoration: none;">
@@ -171,7 +150,7 @@
         </main>
         <footer class="mastfoot mt-auto mb-2">
             <div class="inner text-center">
-                <a type="button" data-toggle="modal" data-target="#exampleModalLong" style="text-decoration: none;">
+                <a type="button" data-toggle="modal" data-target="#descriptionModal" style="text-decoration: none;">
                     <h5 id="title" class="text-center">
                         Loading
                     </h5>

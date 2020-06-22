@@ -97,13 +97,9 @@ body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
 
-
-/*  */
-
 .favorite {
   padding-top: 12px;
   margin-bottom: 6px;
-  /* background-color: rgba(255, 0, 0, 0.1); */
 }
 
 .favorite p {
@@ -120,7 +116,6 @@ body {
   display: block;
   margin-bottom: -18px;
   float: right;
-  /* display: none; */
 }
 
 

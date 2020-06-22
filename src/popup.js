@@ -32,7 +32,6 @@ function getCurrent(data) {
     city = data.name
 
     document.getElementById('current-weather-description').innerText = day + ', ' + time + ', ' + description
-    // document.getElementById('current-weather-icon').src = currentweathericon
     document.getElementById('current-temp').innerText = celsius
     document.getElementById('current-sunrise').innerText = sunrise
     document.getElementById('current-sunset').innerText = sunset

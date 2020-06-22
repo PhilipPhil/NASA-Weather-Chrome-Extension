@@ -36,5 +36,6 @@ Api’s:
 ![Image3](img/uisample/sample3.JPG)
 ![Image4](img/uisample/sample4.JPG)
 ![Image5](img/uisample/sample5.JPG)
-![Image6](img/uisample/sample6.JPG)
 ![Image7](img/uisample/sample7.JPG)
+![Image6](img/uisample/sample6.JPG)
+![Image8](img/uisample/sample8.JPG)

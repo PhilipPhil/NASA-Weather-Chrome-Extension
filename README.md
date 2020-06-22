@@ -1,8 +1,6 @@
 # NASA Astronomy Picture Of The Day Chrome New Tab Extension
  Fully responsive new tab chrome extension that displays NASA's astronomy picture of the day, as well as weekly weather forecast.
 
-This app was morphed from my origional Star Wars weather chrome extension. [Can be seen here](https://github.com/PhilipPhil/Star-Wars-Weather-Chrome-Extension).
-
 Features:
 - Sets background to NASA's astronomy picture of the day.
 - Links to your most visited websites.

@@ -1,5 +1,5 @@
-function getTime(dt) {
-    time = dt.toLocaleTimeString().split(":")[0] + ":" + dt.toLocaleTimeString().split(":")[1] + ' ' + dt.toLocaleTimeString().split(" ")[1]
+function getTime(dte) {
+    time = dte.toLocaleTimeString().split(":")[0] + ":" + dte.toLocaleTimeString().split(":")[1] + ' ' + dte.toLocaleTimeString().split(" ")[1]
     return time
 }
 
@@ -22,7 +22,7 @@ function getCurrent(data) {
     dt = new Date()
     description = data.weather[0].description.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
     day = weekday[dt.getDay()];
-    time = getTime(dt);
+    currenttime = getTime(dt);
     currentweathericon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     celsius = Math.round(data.main.temp - 273.15)
     sunrise = getTime(new Date(data.sys.sunrise * 1000))
@@ -31,7 +31,7 @@ function getCurrent(data) {
     windspeed = (data.wind.speed * 3.6).toFixed(1)
     city = data.name
 
-    document.getElementById('current-weather-description').innerText = day + ', ' + time + ', ' + description
+    document.getElementById('current-weather-description').innerText = day + ', ' + currenttime + ', ' + description
     // document.getElementById('current-weather-icon').src = currentweathericon
     document.getElementById('current-temp').innerText = celsius
     document.getElementById('current-sunrise').innerText = sunrise

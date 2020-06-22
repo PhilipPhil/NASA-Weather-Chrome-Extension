@@ -28,7 +28,7 @@ function setAdd(id) {
       </div>
     </a>
     <a style="text-decoration: none;" data-toggle="modal" data-target="#favoriteModalCenter" 
-      href="#" data-favi=${id} data-url='' data-websitename=''>
+      href="#" data-favi=${id} data-url='' data-websitename='' data-tittle='Add shortcut'>
       <div class="favorite" >
           <div>
               <i style="border-radius: 50%; width: 50px; height: 50px;"
@@ -44,7 +44,7 @@ function setAdd(id) {
 function setFav({ url, iconurl, websitename }, id) {
   favHTML = `
       <a class="hoverdarken" data-toggle="modal" data-target="#favoriteModalCenter"
-          style="text-decoration: none;" data-favi=${id} data-url=${url} data-websitename=${websitename}>
+          style="text-decoration: none;" data-favi=${id} data-url=${url} data-websitename=${websitename} data-tittle='Edit shortcut'>
           <div class="aboutfav">
             <span class="hoversee">&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
           </div>
@@ -94,11 +94,13 @@ $('#favoriteModalCenter').on('show.bs.modal', function (event) {
   var favi = button.data('favi')
   var websitename = button.data('websitename')
   var url = button.data('url')
+  var tittle = button.data('tittle')
 
   var modal = $(this)
   modal.find('#inputID').val(favi)
   modal.find('#inputName').val(websitename)
   modal.find('#inputURL').val(url)
+  modal.find('#mTshortcut').text(tittle)
 })
 
 

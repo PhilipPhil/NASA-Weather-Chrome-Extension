@@ -1,44 +1,48 @@
-function setNewHtml(url, index) {
+function getWebSiteInformation(url, name) {
   i = url.indexOf('/', 1 + url.indexOf('/', 1 + url.indexOf('/')));
   websitedomain = url.substring(0, i);
   websitedomain = websitedomain.split('://')[1]
   var parsed = psl.parse(websitedomain);
+  iconurl = "https://logo.clearbit.com/" + websitedomain
+
   websitename = websitedomain.split('.' + parsed.tld)[0]
   websitename = websitename.replace('www.', '')
+
   websitedomain = parsed.domain
-  iconurl = "https://logo.clearbit.com/" + websitedomain
-  current = {index, url, iconurl, websitename}
-  
-  setFav(current)
-  setAdd(1)
-  setAdd(8)
+  if (name) {
+    websitename = name
+    current = { url, iconurl, websitename }
+  } else {
+    current = { url, iconurl, websitename }
+  }
+
+
+  return current
 }
 
-function setAdd(index) {
-    id = 'fav' + index
-    addHTML = `
-    <a class="hoverdarken" href="#"
-    style="text-decoration: none;">
-    <div class="aboutfav">
-      <span class="hoversee" style="display: none;">&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
-    </div>
-  </a>
-  <a style="text-decoration: none;" data-toggle="modal" data-target="#favoriteModalCenter" href="#" data-favi=${id}>
-    <div class="favorite" >
-        <div>
-            <i style="border-radius: 50%; width: 50px; height: 50px;"
-            class="fa fa-plus-circle fa-2x"></i>
-        </div>
-        <p>Add shortcut</p>
-    </div>
-  </a>
+function setAdd(id) {
+  addHTML = `
+      <a class="hoverdarken" href="#"
+      style="text-decoration: none;">
+      <div class="aboutfav">
+        <span class="hoversee" style="display: none;">&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
+      </div>
+    </a>
+    <a style="text-decoration: none;" data-toggle="modal" data-target="#favoriteModalCenter" href="#" data-favi=${id}>
+      <div class="favorite" >
+          <div>
+              <i style="border-radius: 50%; width: 50px; height: 50px;"
+              class="fa fa-plus-circle fa-2x"></i>
+          </div>
+          <p>Add shortcut</p>
+      </div>
+    </a>
   `
   document.getElementById(id).innerHTML = addHTML
 }
 
-function setFav({index, url, iconurl, websitename}){
+function setFav({ url, iconurl, websitename }, id) {
 
-  id = 'fav' + index
   favHTML = `
       <a class="hoverdarken" data-toggle="modal" data-target="#favoriteModalCenter"
           style="text-decoration: none;" data-favi=${id}>
@@ -55,26 +59,60 @@ function setFav({index, url, iconurl, websitename}){
           </div>
       </a>
   `
+
   document.getElementById(id).innerHTML = favHTML
 }
-
 
 index = 1
 
 document.addEventListener('DOMContentLoaded', function () {
   chrome.topSites.get(function (urls) {
     urls.forEach(function ({ url }) {
-      if (index <= 8) {
-        setNewHtml(url, index)
-        index++
+      id = 'fav' + index
+      if (localStorage[id]) {
+        setFav(JSON.parse(localStorage.getItem(id)), id)
+      } else {
+        if (index <= 7) {
+          cur = getWebSiteInformation(url)
+          setFav(cur, id)
+        } else if (index <= 8) {
+          setAdd(id)
+        }
       }
+
+      index++
     })
   });
 });
 
 $('#favoriteModalCenter').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget) 
+  var button = $(event.relatedTarget)
   var favi = button.data('favi')
   var modal = $(this)
   modal.find('#inputID').val(favi)
+  modal.find('#inputID2').val(favi)
 })
+
+
+document.getElementById('indexform').onsubmit = function (e) {
+  e.preventDefault();
+  id = document.getElementById('inputID').value
+  websitename = document.getElementById('inputName').value
+  url = document.getElementById('inputURL').value
+  cur = getWebSiteInformation(url, websitename)
+  localStorage.setItem(id, JSON.stringify(cur));
+  setFav(cur, id)
+  document.getElementById("indexform").reset();
+  $('#favoriteModalCenter').modal('toggle')
+  // e.preventDefault();
+};
+
+document.getElementById('removeIndex').addEventListener('click', function (e) {
+  id = document.getElementById('inputID').value
+  localStorage.removeItem(id)
+  setAdd(id)
+  document.getElementById("indexform").reset();
+  $('#favoriteModalCenter').modal('toggle')
+  e.preventDefault();
+}
+)

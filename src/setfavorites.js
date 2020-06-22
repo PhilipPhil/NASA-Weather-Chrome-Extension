@@ -16,7 +16,6 @@ function getWebSiteInformation(url, name) {
     current = { url, iconurl, websitename }
   }
 
-
   return current
 }
 
@@ -59,29 +58,34 @@ function setFav({ url, iconurl, websitename }, id) {
           </div>
       </a>
   `
-
   document.getElementById(id).innerHTML = favHTML
-}
 
-index = 1
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   chrome.topSites.get(function (urls) {
-    urls.forEach(function ({ url }) {
+    
+    if( !localStorage['setInitialFavorites'] ) {
+      for(index=1; index<8; index++){
+        url = urls[index-1].url
+        id = 'fav' + index
+        cur = getWebSiteInformation(url)
+        localStorage.setItem(id, JSON.stringify(cur));
+        localStorage['setInitialFavorites'] = true
+      }
+    }
+
+    for(index=1; index<=8; index++){
+      url = urls[index].url
       id = 'fav' + index
-      if (localStorage[id]) {
+      curr = JSON.parse(localStorage.getItem(id))
+      if( curr ){
         setFav(JSON.parse(localStorage.getItem(id)), id)
       } else {
-        if (index <= 7) {
-          cur = getWebSiteInformation(url)
-          setFav(cur, id)
-        } else if (index <= 8) {
-          setAdd(id)
-        }
+        setAdd(id)
       }
+    }
 
-      index++
-    })
   });
 });
 
@@ -104,7 +108,6 @@ document.getElementById('indexform').onsubmit = function (e) {
   setFav(cur, id)
   document.getElementById("indexform").reset();
   $('#favoriteModalCenter').modal('toggle')
-  // e.preventDefault();
 };
 
 document.getElementById('removeIndex').addEventListener('click', function (e) {

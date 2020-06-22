@@ -27,7 +27,8 @@ function setAdd(id) {
         <span class="hoversee" style="display: none;">&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
       </div>
     </a>
-    <a style="text-decoration: none;" data-toggle="modal" data-target="#favoriteModalCenter" href="#" data-favi=${id}>
+    <a style="text-decoration: none;" data-toggle="modal" data-target="#favoriteModalCenter" 
+      href="#" data-favi=${id} data-url='' data-websitename=''>
       <div class="favorite" >
           <div>
               <i style="border-radius: 50%; width: 50px; height: 50px;"
@@ -41,10 +42,9 @@ function setAdd(id) {
 }
 
 function setFav({ url, iconurl, websitename }, id) {
-
   favHTML = `
       <a class="hoverdarken" data-toggle="modal" data-target="#favoriteModalCenter"
-          style="text-decoration: none;" data-favi=${id}>
+          style="text-decoration: none;" data-favi=${id} data-url=${url} data-websitename=${websitename}>
           <div class="aboutfav">
             <span class="hoversee">&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
           </div>
@@ -92,9 +92,13 @@ document.addEventListener('DOMContentLoaded', function () {
 $('#favoriteModalCenter').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
   var favi = button.data('favi')
+  var websitename = button.data('websitename')
+  var url = button.data('url')
+
   var modal = $(this)
   modal.find('#inputID').val(favi)
-  modal.find('#inputID2').val(favi)
+  modal.find('#inputName').val(websitename)
+  modal.find('#inputURL').val(url)
 })
 
 

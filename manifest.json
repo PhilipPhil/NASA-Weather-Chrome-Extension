@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Nasa Weather",
+  "name": "Nasa Apod New Tab",
   "description": "Changes new Tab",
   "version": "1.0.0",
   "icons": {

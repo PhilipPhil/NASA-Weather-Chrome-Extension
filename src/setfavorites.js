@@ -1,19 +1,19 @@
 function getWebSiteInformation(url, name) {
-  i = url.indexOf('/', 1 + url.indexOf('/', 1 + url.indexOf('/')));
-  websitedomain = url.substring(0, i);
+  var i = url.indexOf('/', 1 + url.indexOf('/', 1 + url.indexOf('/')));
+  var websitedomain = url.substring(0, i);
   websitedomain = websitedomain.split('://')[1]
   var parsed = psl.parse(websitedomain);
-  iconurl = "https://logo.clearbit.com/" + websitedomain
+  var iconurl = "https://logo.clearbit.com/" + websitedomain
 
-  websitename = websitedomain.split('.' + parsed.tld)[0]
+  var websitename = websitedomain.split('.' + parsed.tld)[0]
   websitename = websitename.replace('www.', '')
 
   websitedomain = parsed.domain
   if (name) {
     websitename = name
-    current = { url, iconurl, websitename }
+    var current = { url, iconurl, websitename }
   } else {
-    current = { url, iconurl, websitename }
+    var current = { url, iconurl, websitename }
   }
 
   return current

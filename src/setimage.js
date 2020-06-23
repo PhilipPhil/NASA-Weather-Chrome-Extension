@@ -1,5 +1,5 @@
 function setImage(dateDirection) {
-    currDate = new Date()
+    var currDate = new Date()
     currDate = new Date(currDate.toUTCString());
     currDate.setHours(currDate.getHours() - hourdelay);
     try {
@@ -7,7 +7,7 @@ function setImage(dateDirection) {
             positionDate.setDate(positionDate.getDate() - 1);
             setImage(-1);
         } else {
-            ymd = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
+            var ymd = positionDate.getFullYear() + "-" + (positionDate.getMonth() + 1) + "-" + positionDate.getDate();
             fetch(APIUrl + ymd + key)
                 .then((response) => response.json())
                 .then((data) => addBackGround(data, dateDirection));
@@ -25,19 +25,19 @@ function setImage(dateDirection) {
 
 function addBackGround(data, dateDirection) {
     if (data["media_type"] == "image") {
-        title = data["title"];
-        imgURL = "url('" + data["hdurl"] + "')";
-        imgdate = data["date"];
-        explanation = data["explanation"];
-        yy = positionDate.getFullYear().toString().substring(0, 2);
-        pad = "00";
-        mm = (positionDate.getMonth() + 1).toString();
-        mm = pad.substring(0, pad.length - mm.length) + mm;
-        dd = positionDate.getDate().toString();
-        dd = pad.substring(0, pad.length - dd.length) + dd;
-        apodURL = "https://apod.nasa.gov/apod/ap" + yy + mm + dd + ".html";
+        var title = data["title"];
+        var imgURL = "url('" + data["hdurl"] + "')";
+        var imgdate = data["date"];
+        var explanation = data["explanation"];
+        var yy = positionDate.getFullYear().toString().substring(0, 2);
+        var pad = "00";
+        var mm = (positionDate.getMonth() + 1).toString();
+        var mm = pad.substring(0, pad.length - mm.length) + mm;
+        var dd = positionDate.getDate().toString();
+        var dd = pad.substring(0, pad.length - dd.length) + dd;
+        var apodURL = "https://apod.nasa.gov/apod/ap" + yy + mm + dd + ".html";
 
-        hdurl = data["hdurl"];
+        var hdurl = data["hdurl"];
 
         document.getElementById("apodURL").href = apodURL;
         document.getElementById("modaltitle").innerText = title;
@@ -91,15 +91,15 @@ if (posYMD == localStorage["lastupdYMD"]) {
 
 document.getElementById("left").addEventListener("click", function (e) {
     document.getElementById("right").style.visibility = "visible";
-    dateDirection = -1;
+    let dateDirection = -1;
     positionDate.setDate(positionDate.getDate() + dateDirection);
     setImage(dateDirection);
 });
 
 document.getElementById("right").addEventListener("click", function (e) {
-    dateDirection = 1;
+    let dateDirection = 1;
     positionDate.setDate(positionDate.getDate() + dateDirection);
-    currDate = new Date()
+    let currDate = new Date()
     currDate = new Date(currDate.toUTCString());
     currDate.setHours(currDate.getHours() - hourdelay);
 
@@ -119,9 +119,9 @@ document.addEventListener("keyup", function (event) {
     const key = event.key;
     switch (key) {
         case "ArrowRight":
-            dateDirection = 1;
+            var dateDirection = 1;
             positionDate.setDate(positionDate.getDate() + dateDirection);
-            currDate = new Date()
+            var currDate = new Date()
             currDate = new Date(currDate.toUTCString());
             currDate.setHours(currDate.getHours() - hourdelay);
             if (positionDate > currDate) {
@@ -137,7 +137,7 @@ document.addEventListener("keyup", function (event) {
             break;
         case "ArrowLeft":
             document.getElementById("right").style.visibility = "visible";
-            dateDirection = -1;
+            var dateDirection = -1;
             positionDate.setDate(positionDate.getDate() + dateDirection);
             setImage(dateDirection);
             break;

@@ -20,7 +20,7 @@ function getWebSiteInformation(url, name) {
 }
 
 function setAdd(id) {
-  addHTML = `
+  var addHTML = `
       <a class="hoverdarken" href="#"
       style="text-decoration: none;">
       <div class="aboutfav">
@@ -42,7 +42,7 @@ function setAdd(id) {
 }
 
 function setFav({ url, iconurl, websitename }, id) {
-  favHTML = `
+  var favHTML = `
       <a class="hoverdarken" data-toggle="modal" data-target="#favoriteModalCenter"
           style="text-decoration: none;" data-favi=${id} data-url=${url} data-websitename=${websitename} data-title='Edit shortcut'>
           <div class="aboutfav">
@@ -66,19 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
   chrome.topSites.get(function (urls) {
     
     if( !localStorage['setInitialFavorites'] ) {
-      for(index=1; index<8; index++){
-        url = urls[index-1].url
-        id = 'fav' + index
-        cur = getWebSiteInformation(url)
+      for(var index=1; index<8; index++){
+        let url = urls[index-1].url
+        let id = 'fav' + index
+        let cur = getWebSiteInformation(url)
         localStorage.setItem(id, JSON.stringify(cur));
         localStorage['setInitialFavorites'] = true
       }
     }
 
-    for(index=1; index<=8; index++){
-      url = urls[index].url
-      id = 'fav' + index
-      curr = JSON.parse(localStorage.getItem(id))
+    for(var index=1; index<=8; index++){
+      let url = urls[index].url
+      let id = 'fav' + index
+      let curr = JSON.parse(localStorage.getItem(id))
       if( curr ){
         setFav(JSON.parse(localStorage.getItem(id)), id)
       } else {
@@ -106,10 +106,10 @@ $('#favoriteModalCenter').on('show.bs.modal', function (event) {
 
 document.getElementById('indexform').onsubmit = function (e) {
   e.preventDefault();
-  id = document.getElementById('inputID').value
-  websitename = document.getElementById('inputName').value
-  url = document.getElementById('inputURL').value
-  cur = getWebSiteInformation(url, websitename)
+  var id = document.getElementById('inputID').value
+  var websitename = document.getElementById('inputName').value
+  var url = document.getElementById('inputURL').value
+  var cur = getWebSiteInformation(url, websitename)
   localStorage.setItem(id, JSON.stringify(cur));
   setFav(cur, id)
   document.getElementById("indexform").reset();
@@ -117,7 +117,7 @@ document.getElementById('indexform').onsubmit = function (e) {
 };
 
 document.getElementById('removeIndex').addEventListener('click', function (e) {
-  id = document.getElementById('inputID').value
+  var id = document.getElementById('inputID').value
   localStorage.removeItem(id)
   setAdd(id)
   document.getElementById("indexform").reset();

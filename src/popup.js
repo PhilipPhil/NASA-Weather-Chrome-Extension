@@ -4,14 +4,14 @@ function getTime(dte) {
 }
 
 function showMap(position) {
-    lat = position.coords.latitude
-    lon = position.coords.longitude
+    var lat = position.coords.latitude
+    var lon = position.coords.longitude
     setCurrent(lat, lon)
     setList(lat, lon)
 }
 
 function setCurrent(lat, lon) {
-    apikey = '3e7cd6048bd8114abedeee14fcc11575'
+    let apikey = '3e7cd6048bd8114abedeee14fcc11575'
     const urlapi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&exclude=minutely,hourly,daily&appid=${apikey}`
     fetch(urlapi)
         .then(response => response.json())
@@ -19,17 +19,16 @@ function setCurrent(lat, lon) {
 }
 
 function getCurrent(data) {
-    dt = new Date()
-    description = data.weather[0].description.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
-    day = weekday[dt.getDay()];
-    time = getTime(dt);
-    currentweathericon = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    celsius = Math.round(data.main.temp - 273.15)
-    sunrise = getTime(new Date(data.sys.sunrise * 1000))
-    sunset = getTime(new Date(data.sys.sunset * 1000))
-    humidity = data.main.humidity
-    windspeed = (data.wind.speed * 3.6).toFixed(1)
-    city = data.name
+    var dt = new Date()
+    var description = data.weather[0].description.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
+    var day = weekday[dt.getDay()];
+    var time = getTime(dt);
+    var celsius = Math.round(data.main.temp - 273.15)
+    var sunrise = getTime(new Date(data.sys.sunrise * 1000))
+    var sunset = getTime(new Date(data.sys.sunset * 1000))
+    var humidity = data.main.humidity
+    var windspeed = (data.wind.speed * 3.6).toFixed(1)
+    var city = data.name
 
     document.getElementById('current-weather-description').innerText = day + ', ' + time + ', ' + description
     document.getElementById('current-temp').innerText = celsius
@@ -41,7 +40,7 @@ function getCurrent(data) {
 }
 
 function setList(lat, lon) {
-    apikey = '3e7cd6048bd8114abedeee14fcc11575'
+    let apikey = '3e7cd6048bd8114abedeee14fcc11575'
     const urlapi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${apikey}`
     fetch(urlapi)
         .then(response => response.json())
@@ -50,25 +49,24 @@ function setList(lat, lon) {
 
 function getList(data){
 
-    day = data.daily[0]
-    
-    min = Math.round(day.temp.min - 273.15)
-    max = Math.round(day.temp.max - 273.15)
-    currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
+    let day = data.daily[0]
+    let min = Math.round(day.temp.min - 273.15)
+    let max = Math.round(day.temp.max - 273.15)
+    let currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
     document.getElementById('current-min').innerText = min
     document.getElementById('current-max').innerText = max
     document.getElementById('day-weather-icon').src = currentweathericon
 
-    for(i = 1; i < 7; i++){
-        day = data.daily[i]
-        min = Math.round(day.temp.min - 273.15)
-        max = Math.round(day.temp.max - 273.15)
-        currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
-        daystring = weekday[(new Date(day.dt * 1000)).getDay()]
-        dayi = 'day' + i
-        mini = 'min' + i
-        maxi = 'max' + i
-        imgi = 'img' + i
+    for(var i = 1; i < 7; i++){
+        let day = data.daily[i]
+        let min = Math.round(day.temp.min - 273.15)
+        let max = Math.round(day.temp.max - 273.15)
+        let currentweathericon = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`
+        let daystring = weekday[(new Date(day.dt * 1000)).getDay()]
+        let dayi = 'day' + i
+        let mini = 'min' + i
+        let maxi = 'max' + i
+        let imgi = 'img' + i
         document.getElementById(dayi).innerText = daystring
         document.getElementById(mini).innerText = min
         document.getElementById(maxi).innerText = max
@@ -90,7 +88,7 @@ weekday[6]="Saturday";
 navigator.geolocation.getCurrentPosition(showMap);
 
 document.getElementById('togglebutton').addEventListener('click', function(e){
-    text = document.getElementById('togglebutton').innerText
+    var text = document.getElementById('togglebutton').innerText
     if(text == 'Expand'){
         document.getElementById('togglebutton').innerText = 'Collapse'
     } else {

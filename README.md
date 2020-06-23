@@ -1,5 +1,5 @@
 # NASA Astronomy Picture Of The Day Chrome New Tab Extension
- Fully responsive new tab chrome extension that displays NASA's astronomy picture of the day, as well as weekly weather forecast.
+ Fully responsive new tab chrome extension that displays NASA's astronomy picture of the day, as well as the weekly weather forecast.
 
 Future Features:
 - Toggle 24/12 hour clock.
@@ -8,15 +8,15 @@ Future Features:
 
 Features:
 - Sets background to NASA's astronomy picture of the day.
-- Links to your most visited websites.
+- Sets favorites links to most visited websites.
 - Editable favorites links.
 - Shortcuts for gmail, apps, and the original chrome extension.
 - Google search bar.
-- Exact current time.
-- More information modal when the title is clicked.
+- Displays date and time.
+- More image information is displayed when the title is clicked.
 - Press left/right on screen arrows to rotate through past images.
 - Press left/right keyboard keys to rotate through past images.
-- Popup that displayes weekly weather forcasts for current location.
+- Popup that displays weekly weather forecasts for current location.
 - Fully responsive design.
 
 Install:

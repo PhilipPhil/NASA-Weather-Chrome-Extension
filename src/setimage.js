@@ -68,7 +68,7 @@ const hourdelay = 4
 const APIUrl = "https://api.nasa.gov/planetary/apod?date=";
 const key = "&api_key=iJqafJbROElNaKRqqk24Ot5eN6WTYCqYFdteeYz5";
 
-var positionDate = new Date();
+positionDate = new Date();
 positionDate = new Date(positionDate.toUTCString());
 positionDate.setHours(positionDate.getHours() - hourdelay);
 

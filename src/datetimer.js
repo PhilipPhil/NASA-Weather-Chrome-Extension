@@ -1,11 +1,11 @@
 
 function setdate() {
-    dt = new Date()
+    var dt = new Date()
     document.getElementById('date').innerText = dt.toDateString()
 }
 
 function settime() {
-    dt = new Date()
+    var dt = new Date()
     document.getElementById('time').innerText =  dt.toLocaleTimeString()
 }
 

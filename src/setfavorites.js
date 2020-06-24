@@ -67,16 +67,20 @@ document.addEventListener('DOMContentLoaded', function () {
     
     if( !localStorage['setInitialFavorites'] ) {
       for(var index=1; index<8; index++){
-        let url = urls[index-1].url
         let id = 'fav' + index
-        let cur = getWebSiteInformation(url)
-        localStorage.setItem(id, JSON.stringify(cur));
-        localStorage['setInitialFavorites'] = true
+        try {
+          let url = urls[index-1].url
+          let cur = getWebSiteInformation(url)
+          localStorage.setItem(id, JSON.stringify(cur));
+          localStorage['setInitialFavorites'] = true
+        } catch {
+          setAdd(id)
+        }
+
       }
     }
 
     for(var index=1; index<=8; index++){
-      let url = urls[index].url
       let id = 'fav' + index
       let curr = JSON.parse(localStorage.getItem(id))
       if( curr ){

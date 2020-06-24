@@ -1,5 +1,10 @@
 function getTime(dte) {
-    let time = dte.toLocaleTimeString().split(":")[0] + ":" + dte.toLocaleTimeString().split(":")[1] + ' ' + dte.toLocaleTimeString().split(" ")[1]
+    var time = dte.toLocaleTimeString().split(":")[0] + ":" + dte.toLocaleTimeString().split(":")[1] + ' ' + dte.toLocaleTimeString().split(" ")[1]
+    if(dte.toLocaleTimeString().split(" ")[1]){
+        var time = dte.toLocaleTimeString().split(":")[0] + ":" + dte.toLocaleTimeString().split(":")[1] + ' ' + dte.toLocaleTimeString().split(" ")[1]
+    } else {
+        var time = dte.toLocaleTimeString().split(":")[0] + ":" + dte.toLocaleTimeString().split(":")[1]
+    }
     return time
 }
 

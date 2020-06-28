@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Nasa APOD New Tab",
   "description": "Changes new Tab",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "icons": {
     "16": "/img/icon/icon16.png",
     "48": "/img/icon/icon48.png",

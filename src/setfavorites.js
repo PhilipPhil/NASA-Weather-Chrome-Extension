@@ -28,7 +28,7 @@ function setAdd(id) {
       </div>
     </a>
     <a style="text-decoration: none;" data-toggle="modal" data-target="#favoriteModalCenter" 
-      href="#" data-favi=${id} data-url='' data-websitename='' data-title='Add shortcut'>
+      href="#" data-favi='${id}' data-url='' data-websitename='' data-title='Add shortcut'>
       <div class="favorite" >
           <div>
               <i style="border-radius: 50%; width: 50px; height: 50px;"
@@ -44,7 +44,7 @@ function setAdd(id) {
 function setFav({ url, iconurl, websitename }, id) {
   var favHTML = `
       <a class="hoverdarken" data-toggle="modal" data-target="#favoriteModalCenter"
-          style="text-decoration: none;" data-favi=${id} data-url=${url} data-websitename=${websitename} data-title='Edit shortcut'>
+          style="text-decoration: none;" data-favi='${id}' data-url='${url}' data-websitename='${websitename}' data-title='Edit shortcut'>
           <div class="aboutfav">
             <span class="hoversee">&nbsp;&nbsp;<i class="fa fa-ellipsis-v"></i>&nbsp;&nbsp;</span>
           </div>
@@ -97,6 +97,7 @@ $('#favoriteModalCenter').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
   var favi = button.data('favi')
   var websitename = button.data('websitename')
+  alert(websitename)
   var url = button.data('url')
   var title = button.data('title')
 

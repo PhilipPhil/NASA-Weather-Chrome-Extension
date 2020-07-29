@@ -1,7 +1,7 @@
 # NASA Astronomy Picture Of The Day Chrome New Tab Extension
 Fully responsive new tab chrome extension that displays NASA's astronomy picture of the day, as well as the weekly weather forecast.
 
-Can be seen in Chrome Web Store: [Nasa APOD New Tab](https://chrome.google.com/webstore/detail/nasa-apod-new-tab/enmokhdndkkdihllmldhdficglebheni/related?hl=en&fbclid=IwAR3TJLyhcGD-QubiRWHpZtsfAt1fapTduzDlZGoS_qwkK7l-JOz4OENS7_k)
+Can be seen in Chrome Web Store: [Nasa APOD New Tab](https://chrome.google.com/webstore/detail/nasa-apod-new-tab/enmokhdndkkdihllmldhdficglebheni?hl=en&fbclid=IwAR3TJLyhcGD-QubiRWHpZtsfAt1fapTduzDlZGoS_qwkK7l-JOz4OENS7_k)
 
 Future Features:
 - Toggle 24/12 hour clock.

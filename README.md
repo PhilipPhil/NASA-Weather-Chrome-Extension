@@ -39,8 +39,8 @@ Api’s:
 
 ## Sample UI
 
-![Img1](img/uisample/sample1.png)
 ![Img2](img/uisample/sample2.png)
+![Img1](img/uisample/sample1.png)
 ![Image1](img/uisample/sample1.JPG)
 ![Image2](img/uisample/sample2.JPG)
 ![Image3](img/uisample/sample3.JPG)

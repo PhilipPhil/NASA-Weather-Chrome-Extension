@@ -29,7 +29,7 @@ function addBackGround(data, dateDirection) {
         var imgURL = "url('" + data["hdurl"] + "')";
         var imgdate = data["date"];
         var explanation = data["explanation"];
-        var yy = positionDate.getFullYear().toString().substring(0, 2);
+        var yy = positionDate.getFullYear().toString().substring(2, 4);
         var pad = "00";
         var mm = (positionDate.getMonth() + 1).toString();
         var mm = pad.substring(0, pad.length - mm.length) + mm;
